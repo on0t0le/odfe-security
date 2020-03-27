@@ -43,8 +43,8 @@ services:
     volumes:
       - odfe-data2:/usr/share/elasticsearch/data
       - ./MyRootCA.pem:/usr/share/elasticsearch/config/MyRootCA.pem
-      - ./odfe-node2.pem:/usr/share/elasticsearch/config/odfe-node1.pem
-      - ./odfe-node2.key:/usr/share/elasticsearch/config/odfe-node1.key
+      - ./odfe-node2.pem:/usr/share/elasticsearch/config/odfe-node2.pem
+      - ./odfe-node2.key:/usr/share/elasticsearch/config/odfe-node2.key
       - ./node2-elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
     networks:
       - odfe-net
