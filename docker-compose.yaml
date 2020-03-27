@@ -4,13 +4,13 @@ services:
     image: amazon/opendistro-for-elasticsearch:1.4.0
     container_name: odfe-node1
     environment:
-      - cluster.name=odfe-cluster
-      - node.name=odfe-node1
-      - discovery.seed_hosts=odfe-node1,odfe-node2
-      - cluster.initial_master_nodes=odfe-node1,odfe-node2
-      - bootstrap.memory_lock=true # along with the memlock settings below, disables swapping
+      # - cluster.name=odfe-cluster
+      # - node.name=odfe-node1
+      # - discovery.seed_hosts=odfe-node1,odfe-node2
+      # - cluster.initial_master_nodes=odfe-node1,odfe-node2
+      # - bootstrap.memory_lock=true # along with the memlock settings below, disables swapping
+      # - network.host=0.0.0.0 # required if not using the demo Security configuration
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m" # minimum and maximum Java heap size, recommend setting both to 50% of system RAM
-      - network.host=0.0.0.0 # required if not using the demo Security configuration
     ulimits:
       memlock:
         soft: -1
@@ -40,13 +40,13 @@ services:
     image: amazon/opendistro-for-elasticsearch:1.4.0
     container_name: odfe-node2
     environment:
-      - cluster.name=odfe-cluster
-      - node.name=odfe-node2
-      - discovery.seed_hosts=odfe-node1,odfe-node2
-      - cluster.initial_master_nodes=odfe-node1,odfe-node2
-      - bootstrap.memory_lock=true
+      # - cluster.name=odfe-cluster
+      # - node.name=odfe-node2
+      # - discovery.seed_hosts=odfe-node1,odfe-node2
+      # - cluster.initial_master_nodes=odfe-node1,odfe-node2
+      # - bootstrap.memory_lock=true
+      # - network.host=0.0.0.0
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-      - network.host=0.0.0.0
     ulimits:
       memlock:
         soft: -1

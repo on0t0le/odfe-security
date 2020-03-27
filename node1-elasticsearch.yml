@@ -1,3 +1,16 @@
+#give your cluster a name.
+cluster.name: odfe-cluster
+
+#give your nodes a name (change node number from node to node).
+node.name: "odfe-node1"
+
+discovery.seed_hosts: ["odfe-node1","odfe-node2"]
+cluster.initial_master_nodes: ["odfe-node1","odfe-node2"]
+
+bootstrap.memory_lock: true
+#enter the private IP and port of your node:
+network.host: 0.0.0.0
+
 opendistro_security.ssl.transport.pemcert_filepath: node.pem
 opendistro_security.ssl.transport.pemkey_filepath: node-key.pem
 opendistro_security.ssl.transport.pemtrustedcas_filepath: root-ca.pem
