@@ -27,7 +27,7 @@ services:
 
   odfe-node2:
     image: amazon/opendistro-for-elasticsearch:1.4.0
-    container_name: odfe-node1
+    container_name: odfe-node2
     environment:
       - cluster.name=odfe-cluster
       - bootstrap.memory_lock=true
