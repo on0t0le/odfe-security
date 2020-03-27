@@ -6,7 +6,7 @@ services:
     environment:
       - cluster.name=odfe-cluster
       - bootstrap.memory_lock=true
-      - "ES_JAVA_OPTS=-Xms2g -Xmx2g"
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     ulimits:
       memlock:
         soft: -1
@@ -16,10 +16,10 @@ services:
         hard: 65536
     volumes:
       - odfe-data1:/usr/share/elasticsearch/data
-      - ./MyRootCA.pem:/usr/share/elasticsearch/config/MyRootCA.pem
-      - ./odfe-node1.pem:/usr/share/elasticsearch/config/odfe-node1.pem
-      - ./odfe-node1.key:/usr/share/elasticsearch/config/odfe-node1.key
-      - ./node1-elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      # - ./MyRootCA.pem:/usr/share/elasticsearch/config/MyRootCA.pem
+      # - ./odfe-node1.pem:/usr/share/elasticsearch/config/odfe-node1.pem
+      # - ./odfe-node1.key:/usr/share/elasticsearch/config/odfe-node1.key
+      # - ./node1-elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
     ports:
       - 9200:9200
     networks:
@@ -31,7 +31,7 @@ services:
     environment:
       - cluster.name=odfe-cluster
       - bootstrap.memory_lock=true
-      - "ES_JAVA_OPTS=-Xms2g -Xmx2g"
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
       - discovery.zen.ping.unicast.hosts=odfe-node1
     ulimits:
       memlock:
@@ -42,10 +42,10 @@ services:
         hard: 65536
     volumes:
       - odfe-data2:/usr/share/elasticsearch/data
-      - ./MyRootCA.pem:/usr/share/elasticsearch/config/MyRootCA.pem
-      - ./odfe-node2.pem:/usr/share/elasticsearch/config/odfe-node2.pem
-      - ./odfe-node2.key:/usr/share/elasticsearch/config/odfe-node2.key
-      - ./node2-elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      # - ./MyRootCA.pem:/usr/share/elasticsearch/config/MyRootCA.pem
+      # - ./odfe-node2.pem:/usr/share/elasticsearch/config/odfe-node2.pem
+      # - ./odfe-node2.key:/usr/share/elasticsearch/config/odfe-node2.key
+      # - ./node2-elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
     networks:
       - odfe-net
 
