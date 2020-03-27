@@ -1,3 +1,5 @@
 -subj "/C=US/ST=New Sweden/L=Stockholm /O=.../OU=.../CN=.../emailAddress=..."
 subject=/C=CA/ST=ONTARIO/L=TORONTO/O=ORG/OU=UNIT/CN=node1.example.com
--subj "/C=UA/ST=Kyiv/L=Kyiv/O=ORG/OU=UNIT/CN=ADMIN"
+
+
+openssl req -new -x509 -sha256 -key root-ca-key.pem -out root-ca.pem -subj "/C=UA/ST=Kyiv/L=Kyiv/O=ORG/OU=UNIT/CN=ADMIN"
