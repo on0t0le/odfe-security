@@ -20,11 +20,11 @@ services:
         hard: 65536
     volumes:
       - odfe-data1:/usr/share/elasticsearch/data
-      - .ssl/root-ca.pem:/usr/share/elasticsearch/config/root-ca.pem
-      - .ssl/node1.pem:/usr/share/elasticsearch/config/node.pem
-      - .ssl/node1-key.pem:/usr/share/elasticsearch/config/node-key.pem
-      - .ssl/admin.pem:/usr/share/elasticsearch/config/admin.pem
-      - .ssl/admin-key.pem:/usr/share/elasticsearch/config/admin-key.pem
+      - ./ssl/root-ca.pem:/usr/share/elasticsearch/config/root-ca.pem
+      - ./ssl/node1.pem:/usr/share/elasticsearch/config/node.pem
+      - ./ssl/node1-key.pem:/usr/share/elasticsearch/config/node-key.pem
+      - ./ssl/admin.pem:/usr/share/elasticsearch/config/admin.pem
+      - ./ssl/admin-key.pem:/usr/share/elasticsearch/config/admin-key.pem
       - ./node1-elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
       # - ./internal_users.yml:/usr/share/elasticsearch/plugins/opendistro_security/securityconfig/internal_users.yml
       # - ./roles_mapping.yml:/usr/share/elasticsearch/plugins/opendistro_security/securityconfig/roles_mapping.yml
@@ -56,11 +56,11 @@ services:
         hard: 65536
     volumes:
       - odfe-data2:/usr/share/elasticsearch/data
-      - .ssl/root-ca.pem:/usr/share/elasticsearch/config/root-ca.pem
-      - .ssl/node2.pem:/usr/share/elasticsearch/config/node.pem
-      - .ssl/node2-key.pem:/usr/share/elasticsearch/config/node-key.pem
-      - .ssl/admin.pem:/usr/share/elasticsearch/config/admin.pem
-      - .ssl/admin-key.pem:/usr/share/elasticsearch/config/admin-key.pem
+      - ./ssl/root-ca.pem:/usr/share/elasticsearch/config/root-ca.pem
+      - ./ssl/node2.pem:/usr/share/elasticsearch/config/node.pem
+      - ./ssl/node2-key.pem:/usr/share/elasticsearch/config/node-key.pem
+      - ./ssl/admin.pem:/usr/share/elasticsearch/config/admin.pem
+      - ./ssl/admin-key.pem:/usr/share/elasticsearch/config/admin-key.pem
       - ./node2-elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
       # - ./internal_users.yml:/usr/share/elasticsearch/plugins/opendistro_security/securityconfig/internal_users.yml
       # - ./roles_mapping.yml:/usr/share/elasticsearch/plugins/opendistro_security/securityconfig/roles_mapping.yml
